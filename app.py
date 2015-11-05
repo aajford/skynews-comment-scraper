@@ -46,7 +46,7 @@ def index():
     urlHottest = "https://bskyb.bootstrap.fyre.co/api/v3.0/hottest/?site=360818&number=5"
 
     done = 0
-    maxTries = 5
+    maxTries = 10
 
     while done < maxTries:
 
@@ -98,7 +98,7 @@ def index():
         try: 
 
             horribleCommentHTML = jsonDataComments["data"]["content"][ratedCommentNorm]["content"]["bodyHtml"]
-            numberOfLikes = str(jsonDataComments["data"]["content"][ratedCommentNorm]["content"]["annotations"]["likes"])
+            numberOfLikes = jsonDataComments["data"]["content"][ratedCommentNorm]["content"]["annotations"]["likes"]
         
         except: 
             done +=1
@@ -115,22 +115,13 @@ def index():
 
         break
 
-    if done == 5:
-        
-        return "{comment: \"Sorry, LiveFyre's API is being about as good as Vigiglobe's\"}"
+    if done == maxTries:
+        errorString = "Sorry, LiveFyre's API is being about as good as Vigiglobe's"
+        return {"comment": errorString}
+
 
     else:
-
         #print the horrible comment
-        if numberOfLikes == "1" or numberOfLikes == "0":
-            return {"comment": filth, "storyTitle": articleTitle, "numberOfLikes": numberOfLikes}
-            
+        return {"comment": filth, "storyTitle": articleTitle, "numberOfLikes": numberOfLikes}
 
-        else:
-            return {"comment": filth, "storyTitle": articleTitle, "numberOfLikes": numberOfLikes}
-            #comment =  "{comment: \'" + filth + "\' - " + articleTitle + ", " + numberOfLikes + " likes\"}"
-
-
-    #return comment
-
-bottle.run(host='0.0.0.0', port=argv[1])
+bottle.run(host='0.0.0.0', port=5000)
