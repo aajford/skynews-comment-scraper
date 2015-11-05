@@ -12,7 +12,7 @@ bottle.debug(True)
 
 @get('/')
 def index():
-    response.content_type = 'text/plain; charset=utf-8'
+    response.content_type = 'text/json; charset=utf-8'
     try:
         # For Python 3.0 and later
         from urllib.request import urlopen
