@@ -123,11 +123,11 @@ def index():
 
         #print the horrible comment
         if numberOfLikes == "1" or numberOfLikes == "0":
-            return {"comment": filth, "title": articleTitle, "numberOfLikes": numberOfLikes}
-            #comment =  "{comment: \'" + filth + "\' - " + articleTitle + ", " + numberOfLikes + " like\"}"
+            return {"comment": filth, "storyTitle": articleTitle, "numberOfLikes": numberOfLikes}
+            
 
         else:
-            return {"comment": filth, "title": articleTitle, "numberOfLikes": numberOfLikes}
+            return {"comment": filth, "storyTitle": articleTitle, "numberOfLikes": numberOfLikes}
             #comment =  "{comment: \'" + filth + "\' - " + articleTitle + ", " + numberOfLikes + " likes\"}"
 
 
