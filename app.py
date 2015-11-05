@@ -117,7 +117,7 @@ def index():
 
     if done == 5:
         
-        print "LiveFyre's API is being about as good as vigiglobe's"
+        return "{comment: \"Sorry, LiveFyre's API is being about as good as Vigiglobe's\"}"
 
     else:
 
@@ -126,7 +126,7 @@ def index():
             comment =  "\"" + filth + "\" (source: " + articleUrl + ", " + numberOfLikes + " like)"
 
         else:
-            comment =  "{comment: \"'" + filth + "' (source: " + articleUrl + ", " + numberOfLikes + " likes)\"}"
+            comment =  "{comment: \"" + filth + " (" + articleUrl + ", " + numberOfLikes + " likes)\"}"
 
 
     return comment
