@@ -65,7 +65,7 @@ def index():
         try:
 
             # Read the 'Hottest' story title and ID
-            articleUrl = jsonDataStories["data"][storiesNorm]["url"]
+            articleTitle = jsonDataStories["data"][storiesNorm]["title"]
             articleID =  str(jsonDataStories["data"][storiesNorm]["articleId"])
             # Encode ID using Base 64
             articleIDBase64 = base64.b64encode(articleID)
@@ -123,10 +123,10 @@ def index():
 
         #print the horrible comment
         if numberOfLikes == "1" or numberOfLikes == "0":
-            comment =  "\"" + filth + "\" (source: " + articleUrl + ", " + numberOfLikes + " like)"
+            comment =  "{comment: \"" + filth + "\" - " + articleTitle + ", " + numberOfLikes + " like\"}"
 
         else:
-            comment =  "{comment: \"" + filth + " (" + articleUrl + ", " + numberOfLikes + " likes)\"}"
+            comment =  "{comment: \"" + filth + "\" - " + articleTitle + ", " + numberOfLikes + " likes\"}"
 
 
     return comment
