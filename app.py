@@ -123,12 +123,14 @@ def index():
 
         #print the horrible comment
         if numberOfLikes == "1" or numberOfLikes == "0":
-            comment =  "{comment: \"" + filth + "\" - " + articleTitle + ", " + numberOfLikes + " like\"}"
+            return {"comment": filth, "title": articleTitle, "numberOfLikes": numberOfLikes}
+            #comment =  "{comment: \'" + filth + "\' - " + articleTitle + ", " + numberOfLikes + " like\"}"
 
         else:
-            comment =  "{comment: \"" + filth + "\" - " + articleTitle + ", " + numberOfLikes + " likes\"}"
+            return {"comment": filth, "title": articleTitle, "numberOfLikes": numberOfLikes}
+            #comment =  "{comment: \'" + filth + "\' - " + articleTitle + ", " + numberOfLikes + " likes\"}"
 
 
-    return comment
+    #return comment
 
 bottle.run(host='0.0.0.0', port=argv[1])
