@@ -124,4 +124,4 @@ def index():
         #print the horrible comment
         return {"comment": filth, "storyTitle": articleTitle, "numberOfLikes": numberOfLikes}
 
-bottle.run(host='0.0.0.0', port=5000)
+bottle.run(host='0.0.0.0', port=argv[1])
