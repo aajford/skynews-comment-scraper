@@ -121,7 +121,7 @@ def index():
 
 
     else:
-        #print the horrible comment
+        # Return the horrible comment
         return {"comment": filth, "storyTitle": articleTitle, "numberOfLikes": numberOfLikes}
 
 bottle.run(host='0.0.0.0', port=argv[1])
