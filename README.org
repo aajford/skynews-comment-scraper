@@ -1,1 +1,44 @@
+* bottle.py Heroku-compatible app to return comments from Sky News
+  To push to heroku:
+  : git push heroku master
 
+
+  The app returns one of the top rated comments from one of the 'hottest' stories on the news.sky.com. It also returns the story's title and the number of likes the comments receives.
+
+* Installing development environment
+  To install [[http://bottlepy.org/docs/dev/][Bottle framework]] into a
+  virtualenv:
+  : virtualenv env
+  : source env/bin/activate
+  : pip install -r requirements.txt
+
+  You might also want to add =reloader=False= to the bottle.run call to enable
+  automatic code reloading during development.
+
+* Running development server
+  Remember to load the virtualenv:
+  : source env/bin/activate
+  and then just run app.py:
+  : ./app.py
+
+* License
+  Copyright (C) 2011 by Atte Hinkka
+  Copyright (C) 2015 byt Aaron Ford
+  
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal: 
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,: 
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  THE SOFTWARE.
