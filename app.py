@@ -65,7 +65,7 @@ def index():
         try:
 
             # Read the 'Hottest' story title and ID
-            articleTitle = jsonDataStories["data"][storiesNorm]["title"]
+            articleTitle = jsonDataStories["data"][storiesNorm]["url"]
             articleID =  str(jsonDataStories["data"][storiesNorm]["articleId"])
             # Encode ID using Base 64
             articleIDBase64 = base64.b64encode(articleID)
