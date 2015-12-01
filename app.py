@@ -43,7 +43,7 @@ def index():
 
 
     # URL for LivefyreAPI
-    urlHottest = "https://bskyb.bootstrap.fyre.co/api/v3.0/hottest/?site=360818&number=5"
+    urlHottest = "https://bskyb.bootstrap.fyre.co/api/v3.0/hottest/?site=360818&number=10"
 
     done = 0
     maxTries = 10
