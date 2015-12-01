@@ -45,8 +45,9 @@ def index():
     # URL for LivefyreAPI
     urlHottest = "https://bskyb.bootstrap.fyre.co/api/v3.0/hottest/?site=360818&number=10"
 
+    #Maximum number of tries
     done = 0
-    maxTries = 10
+    maxTries = 5000
 
     while done < maxTries:
 
@@ -64,8 +65,9 @@ def index():
 
         try:
 
-            # Read the 'Hottest' story title and ID
-            articleTitle = jsonDataStories["data"][storiesNorm]["url"]
+            # Read the 'Hottest' story URL and ID
+            # articleTitle = jsonDataStories["data"][storiesNorm]["url"]
+            articleURL = jsonDataStories["data"][storiesNorm]["url"]
             articleID =  str(jsonDataStories["data"][storiesNorm]["articleId"])
             # Encode ID using Base 64
             articleIDBase64 = base64.b64encode(articleID)
@@ -86,7 +88,6 @@ def index():
             continue
 
         # Pick a random comment
-
         try:
             ratedComments = len(jsonDataComments["data"]["content"])
             ratedCommentNorm = randint(0,(ratedComments - 1))
@@ -116,12 +117,12 @@ def index():
         break
 
     if done == maxTries:
-        errorString = "Sorry, LiveFyre's API is being about as good as Vigiglobe's"
+        errorString = "They're busy killing puppies"
         return {"comment": errorString}
 
 
     else:
         # Return the horrible comment
-        return {"comment": filth, "storyTitle": articleTitle, "numberOfLikes": numberOfLikes}
+        return {"comment": filth, "storyTitle": articleURL, "numberOfLikes": numberOfLikes}
 
 bottle.run(host='0.0.0.0', port=argv[1])
